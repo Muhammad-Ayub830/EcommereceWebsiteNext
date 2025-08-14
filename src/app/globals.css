@@ -1,1 +1,82 @@
 @import "tailwindcss";
+
+.success-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+/* Ripple rings with smooth gradient */
+.ringg {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: ripple 3s linear infinite;
+  border: none !important;
+}
+
+.ringg.delay-1 {
+  animation-delay: 1s;
+}
+
+.ringg.delay-2 {
+  animation-delay: 2s;
+  background-color: #c9c5c5;
+}
+svg{
+  cursor: pointer;
+}
+i{
+  cursor: pointer;
+}
+.category-slider::-webkit-scrollbar{
+  display: none;
+}
+.testimonial::-webkit-scrollbar{
+  display: none;
+}
+@keyframes ripple {
+  0% {
+    transform: scale(0.7);
+     background: gray;
+  }
+ 
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+
+  }
+}
+
+/* Nucleus */
+.nucleus {
+  position: relative;
+  z-index: 2;
+  width: 90px;
+  height: 90px;
+  background: #131118;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner {
+  background: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner svg {
+  font-size: 14px;
+  color: black;
+}
