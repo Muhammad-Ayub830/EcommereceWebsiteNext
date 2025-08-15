@@ -8,7 +8,7 @@ import { FaChevronDown } from "react-icons/fa6";
 import { Fahkwang, Jost } from 'next/font/google'
 import Link from 'next/link'
   const josts = Jost({
-    subsets:['latin'],
+    subsets:['latin']
   })
 const Navbar = () => {
 
@@ -20,7 +20,7 @@ const Navbar = () => {
      <div className="links">
       <ul className='flex items-center justify-between gap-10'>
        <Link href='/'><li>Home</li></Link> 
-      <Link href='/products'><li className=' flex'><p className=''>Products </p><FaChevronDown className=' mt-1 ml-1 w-3 ' /></li></Link> 
+      <Link href='/products'><li className=''>Products </li></Link> 
         <li>Our Story</li>
         <li>Blog</li>
         <li>Contact Us</li>

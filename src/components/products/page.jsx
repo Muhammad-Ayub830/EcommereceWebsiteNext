@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import p1 from '../../../public/imges/1.png'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaStar } from 'react-icons/fa'
 const Products = ({ items ,plenght }) => {
         
 
@@ -28,8 +29,12 @@ const Products = ({ items ,plenght }) => {
                             <Image src={product.image} alt="img" fill className="object-contain" />
                         </div>
                         <h3 className='font-bold mt-3'>{product.title}</h3>
-                        <p>{product.description}</p>
-                        <p className='flex items-center gap-3 '>{product.price}
+                        <p className='flex gap-1 my-2 items-center'>
+                            {Array.from({length:product.rating.rate},(_,i)=> <FaStar className='text-amber-300' />)}
+                            <span className='font-bold ml-2'>{product.rating.rate} </span>
+                        </p>
+                        <p className='h-[50px] overflow-hidden text-gray-700'>{product.description}</p>
+                        <p className='flex items-center gap-3 font-bold '>${product.price}
                             {/* <span className="text-[#e9e1e9]">$40.00</span> */}
                         </p>
                     </div> </Link> 
