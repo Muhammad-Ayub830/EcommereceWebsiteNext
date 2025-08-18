@@ -2,6 +2,7 @@ import { itemsContext } from '@/app/Context';
 import Image from 'next/image'
 import React, { useContext, useState } from 'react'
 import { FaStar } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const Productframe = ({product}) => {
   const {addtocart,cart} = useContext(itemsContext)
@@ -44,8 +45,9 @@ const Productframe = ({product}) => {
           <p onClick={(e)=>setColor('#000003')} className={` ${color == '#000003' ?' rounded-full' :'rounded'} font-bold bg-[#000003] h-[50px] w-[50px] py-3 text-center `}></p>
         </div>
         <div className="flex gap-x-2 items-center mt-5">
-           <button disabled={!size || !color} onClick={()=>addtocart(product.id,size,color,quantity,product.image,product.price,product.title)}
-         className={` ${!size || !color ? 'bg-gray-400 cursor-not-allowed':'cursor-pointer'}  grow-1  text-center py-3 rounded-md bg-black text-white  `}>
+           <button disabled={!size || !color} onClick={()=>{addtocart(product.id,size,color,quantity,product.image,product.price,product.title); toast.success("added to ")}}
+        
+        className={` ${!size || !color ? 'bg-gray-400 cursor-not-allowed':'cursor-pointer'}  grow-1  text-center py-3 rounded-md bg-black text-white  `}>
           Add to Cart </button>
           <input onChange={(e)=>setquantity(e.target.value)} type="number" className='py-2 text-center rounded-md pl-3 font-bold text-2xl bg-gray-300 w-[80px] ' defaultValue={1} min={1}/>
         </div>

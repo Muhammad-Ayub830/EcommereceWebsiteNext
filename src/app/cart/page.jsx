@@ -8,6 +8,9 @@ import { MdDeleteForever } from "react-icons/md";
 import { SiCodestream } from "react-icons/si";
 import { FaDeleteLeft } from 'react-icons/fa6'
 import { itemsContext } from '../Context'
+import { ToastContainer, toast } from 'react-toastify';
+
+import Link from 'next/link'
 const Cart = () => {
   const {cart} = useContext(itemsContext)
   const [Subtotal,setSubtotal] = useState(0)
@@ -30,6 +33,7 @@ const Cart = () => {
   }
   useEffect(()=>{
       totalPrice(10,15)
+     
   },[cart])
   return (
    <>
@@ -82,8 +86,8 @@ const Cart = () => {
         <p>{total}</p>
       </div>
       <div className="btns flex gap-2 mt-5 ">
-        <input placeholder='🏷 Add promo Code' className='outline-none text-gray-500 rounded-lg text-center py-2  bg-gray-200 grow-1 ' />
-        <button className='bg-black cursor-pointer  text-white px-5 rounded-lg py-2 leading-4'>Apply</button>
+        <input placeholder='🏷 Add promo Code'  className='outline-none text-gray-500 rounded-lg text-center py-2  bg-gray-200 grow-1 ' />
+      <Link href={'/orderPlace'} >  <button onClick={()=>toast.success("Coupon code applied!")} className='bg-black cursor-pointer  text-white px-5 rounded-lg py-3 leading-4'>Apply</button></Link>
       </div>
       </div>
     </div>

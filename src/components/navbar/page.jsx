@@ -19,8 +19,8 @@ const Navbar = () => {
      </div>
      <div className="links">
       <ul className='flex items-center justify-between gap-10'>
-       <Link href='/'><li>Home</li></Link> 
-      <Link href='/products'><li className=''>Products </li></Link> 
+       <li><Link href='/'>Home</Link> </li>
+      <li className=''><Link href='/products'>Products </Link> </li>
         <li>Our Story</li>
         <li>Blog</li>
         <li>Contact Us</li>
@@ -28,7 +28,7 @@ const Navbar = () => {
      </div>
      <div className="btns flex text-xl items-center justify-between gap-5">
       <LuSearch className=''/>
-      <FaRegHeart/>
+      {/* <FaRegHeart/> */}
     <Link href={'/cart'}> <LuShoppingBag  />  </Link> 
       <button className='btn px-5  py-2 rounded-md bg-black text-white '>Login</button>
      </div>

@@ -6,6 +6,7 @@ const Context = ({children}) => {
   const [items,setItems] = useState([])
   const [cart,setCart] = useState([])
 
+
   // adding items to cart 
   const addtocart = (id, size, color, quantity, image, price,name) => {
     setCart(prevCart => {
@@ -29,6 +30,10 @@ const Context = ({children}) => {
     });
   };
 
+
+
+ 
+
   // fetching products 
   const fetchdata = async()=> {
     const res = await fetch("https://fakestoreapi.com/products");
@@ -42,15 +47,18 @@ const Context = ({children}) => {
     if (storedCart) {
       setCart(JSON.parse(storedCart));
     }
+
   }, []);
 
   //  Save cart to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart" , JSON.stringify(cart));
+       
   }, [cart]);
 
   useEffect(()=>{  
     fetchdata()
+
   },[])
 
   return (
