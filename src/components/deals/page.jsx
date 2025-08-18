@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React from 'react'
-import deal from '../../../public/imges/deal.png'
+import deal from '../../../public/imges/deal.PNG'
 import { FaLongArrowAltRight } from 'react-icons/fa'
 const Deals = () => {
   return (

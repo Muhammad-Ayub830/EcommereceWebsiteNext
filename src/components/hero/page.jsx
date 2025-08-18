@@ -2,7 +2,7 @@ import React from 'react'
 import { Fahkwang, Jost } from 'next/font/google'
 import { CiMail } from "react-icons/ci";
 import { FaLongArrowAltRight } from 'react-icons/fa';
-import hero from '../../../public/imges/heroPic.png'
+import hero from '../../../public/imges/heroPic.PNG'
 import Image from 'next/image';
   const josts = Jost({
     subsets:['latin'],
